@@ -6,7 +6,7 @@
  *   <li> depNivel	nivel de gasolina del depósito
  * </ul>
  * 
- * class invariante 		0.0 &lt;= depNivel &lt;= depMax
+ * class invariante 	0.0 &lt;= depNivel &lt;= depMax
  * 
  * @author IES Seveero Ochoa Team
  * @version 1.0
@@ -71,6 +71,11 @@ public class DepositoCombustible {
     public boolean estaLleno(){
 	  return depNivel == depMax;
     }
+    
+    // Método para comprobar si está por la mitad el depósito
+    public boolean estaPorLaMitad() {
+    	return depNivel == depMax/2;	
+    }
 
    /**
 	* llenar es un método que efectúa cambios añadiendo combustible al depósito
@@ -85,7 +90,7 @@ public class DepositoCombustible {
 	* 
 	*/
     public void fill(double amount){
-       depNivel = depNivel + amount;
+    	depNivel = depNivel + amount;
     }
 
    /**
